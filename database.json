@@ -1,0 +1,12 @@
+{
+    "dialect": "sqlite3",
+    "database": "",
+    "username": "",
+    "password": "",
+    "host": "",
+    "port": 0,
+    "params": null,
+    "max_idle_conns": 10,
+    "max_open_conns": 100,
+    "log_level": "warn"
+}    
