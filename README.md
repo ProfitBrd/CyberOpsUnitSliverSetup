@@ -3,6 +3,10 @@ All the commands and files needed to set up the exercise, reminder that this exe
 
 Make sure to run `sudo systemctl start sliver.service` to get Sliver working
 
+PW to both the Main Profiles: `monkey`
+PW to aevergreendesktop: `password`
+PW to aevergreen: `temple435`
+
 Commands used:
 1. Generate Sliver Implant: `generate --os linux --arch arm64 --name [Implant Name] --http [IP of Teamserver]`
 2. Copy over to Intermediate server: `scp [Implant Name] aeverwooddesktop@[IP of Intermediate Server]:/home/aeverwooddesktop/Documents` (Password is 'password')
