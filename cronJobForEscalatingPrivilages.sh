@@ -9,7 +9,7 @@ for i in {1..10}; do
     echo "echo \"Current Time: \$(date)\" > \"$LOG_FILE\"" >> "$SCRIPT_PATH"
 
     # Make root_cron_job_#.sh readable, writable, and executable by everyone
-    chmod 777 "$SCRIPT_PATH"
+    sudo chmod 777 "$SCRIPT_PATH"
 
     # Add a cron job entry for root to run root_cron_job_#.sh every minute
     (sudo crontab -l 2>/dev/null; echo "* * * * * $SCRIPT_PATH") | sudo crontab -
