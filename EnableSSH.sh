@@ -38,8 +38,3 @@ else
     ssh-copy-id -i "/home/$username/.ssh/id_rsa.pub" "$username@$ip_address"
     echo -e "${GREEN}Public key installed on the target server using ssh-copy-id.${NC}"
 fi
-
-# Disable password authentication on the target server (optional)
-ssh "$username@$ip_address" "sudo sed -i '/^#PasswordAuthentication yes/c\PasswordAuthentication no' /etc/ssh/sshd_config && sudo systemctl restart sshd"
-
-echo -e "${GREEN}Password authentication disabled on the target server.${NC}"
