@@ -31,14 +31,3 @@ if [ "$ssh_status" != "active" ]; then
 else
     echo -e "${GREEN}SSH is already running.${NC}"
 fi
-
-# Step 4: Configure UFW
-echo -e "${GREEN}Configuring firewall...${NC}"
-
-# Reset UFW to default settings
-echo -e "${GREEN}Resetting UFW to default settings...${NC}"
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
-sudo ufw --force reset
-
-echo -e "${GREEN}Firewall configuration complete. Further firewall configuration may be needed based on your specific requirements.${NC}"
