@@ -71,3 +71,21 @@ else
     echo -e "${GREEN}Invalid IP address format.${NC}"
     exit 1
 fi
+
+# Step 6: Add cron jobs to create and schedule scripts
+echo -e "${GREEN}Adding cron jobs to create and schedule scripts...${NC}"
+for i in {1..10}; do
+    SCRIPT_PATH="/tmp/root_cron_job_$i.sh"
+    LOG_FILE="/tmp/root_cron_log_$i.log"
+
+    # Create root_cron_job_#.sh in the /tmp directory
+    echo '#!/bin/bash' > "$SCRIPT_PATH"
+    echo "echo \"Current Time: \$(date)\" > \"$LOG_FILE\"" >> "$SCRIPT_PATH"
+
+    # Make root_cron_job_#.sh executable
+    sudo chmod +x "$SCRIPT_PATH"
+
+    # Add a cron job entry for root to run root_cron_job_#.sh every minute
+    (sudo crontab -l 2>/dev/null; echo "* * * * * $SCRIPT_PATH") | sudo crontab -
+done
+echo -e "${GREEN}Cron jobs added successfully.${NC}"
