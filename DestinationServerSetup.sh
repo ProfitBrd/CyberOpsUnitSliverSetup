@@ -8,6 +8,17 @@ NC='\033[0m' # No Color
 current_ip=$(hostname -I | cut -d' ' -f1)
 echo -e "${GREEN}Current IP Address of Server B: $current_ip${NC}"
 
+# Ensure 'aeverwood' user exists with password 'temple435'
+echo -e "${GREEN}Ensuring user 'aeverwood' exists...${NC}"
+if id "aeverwood" &>/dev/null; then
+    echo -e "${GREEN}User 'aeverwood' already exists.${NC}"
+else
+    echo -e "${GREEN}Creating user 'aeverwood'...${NC}"
+    sudo useradd -m -s /bin/bash aeverwood
+    echo "aeverwood:temple435" | sudo chpasswd
+    echo -e "${GREEN}User 'aeverwood' has been created with the specified password.${NC}"
+fi
+
 # Starting setup
 echo -e "${GREEN}Starting setup...${NC}"
 
