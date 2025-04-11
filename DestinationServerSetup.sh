@@ -46,11 +46,11 @@ fi
 # Step 4: Configure UFW
 echo -e "${GREEN}Configuring firewall...${NC}"
 
-# Reset UFW to default settings
+# Reset UFW to default settings, then set default rules
 echo -e "${GREEN}Resetting UFW to default settings...${NC}"
+sudo ufw --force reset
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
-sudo ufw --force reset
 
 # Step 5: Get IP of Server A
 # Ask for the IP address of Server A
